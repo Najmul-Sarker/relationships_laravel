@@ -29,9 +29,14 @@
                         <td>{{ $forum->title }}</td>
                         <td>{{ $forum->description }}</td>
                         <td>
-                            <a href="">show</a>
-                            <a href="">edit</a>
-                            <a href="">delete</a>
+                            <a class="btn btn-sm btn-info" href="{{ route('forum.show',$forum->id) }}">View</a>
+                            <a class="btn btn-sm btn-warning" href="{{ route('forum.edit',$forum->id) }}">Edit</a>
+                            <form style="display:inline" action="{{route('forum.delete',$forum->id)}}" method="POST">
+                                @csrf
+                                @method('delete')
+                                <button onclick="alert('Are You Sure ! to DELETE this file?')" type="submit" class="btn btn-sm btn-danger">Delete</button>
+                                
+                            </form>
                         </td>
                         
                         
