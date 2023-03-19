@@ -18,7 +18,7 @@
                         <a class="nav-link" href="{{ route('forum.index') }}">Forum</a>
                         <a class="nav-link" href="{{ route('topic.index') }}">Topic</a>
                         <a class="nav-link" href="{{ route('post.index') }}">Post</a>
-                        <a class="nav-link" href="#">Comment</a>
+                        <a class="nav-link" href="{{ route('comment.index') }}">Comment</a>
                     </nav>
                 </div>
                 <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">

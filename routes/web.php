@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\backend\CommentController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\backend\HomeController;
 use App\Http\Controllers\backend\ForumController;
@@ -55,5 +56,16 @@ Route::prefix('admin/post')->name('post.')->controller(PostController::class)->g
     Route:: get('/show/{post}','show')->name('show');
     Route:: post('/update/{post}','update')->name('update');
     Route:: delete('/delete/{post}','delete')->name('delete');
+
+});
+//comment route
+Route::prefix('admin/comment')->name('comment.')->controller(CommentController::class)->group(function(){
+    Route:: get('/','index')->name('index');
+    Route:: get('/create','create')->name('create');
+    Route:: post('/store','store')->name('store');
+    Route:: get('/edit/{comment}','edit')->name('edit');
+    Route:: get('/show/{comment}','show')->name('show');
+    Route:: post('/update/{comment}','update')->name('update');
+    Route:: delete('/delete/{comment}','delete')->name('delete');
 
 });

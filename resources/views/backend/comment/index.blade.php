@@ -1,9 +1,9 @@
 <x-backend.layouts.master>
     <div class="card mb-4">
         <div class="card-header">
-            <a href="{{ route('post.create') }}" class="btn btn-primary">create</a>
+            <a href="{{ route('comment.create') }}" class="btn btn-primary">create</a>
             <x-slot:title>
-                Post List
+                Comment List
             </x-slot>
         </div>
         @if (session('success'))
@@ -16,22 +16,22 @@
                 <thead>
                     <tr>
                         <th>Ser</th>
-                        <th>Topic Name</th>
+                        <th>Post Name</th>
                         <th>Description</th>
                         <th>Action</th>
                     </tr>
                 </thead>
                
                 <tbody>
-                    @foreach ($posts as $post )
+                    @foreach ($comments as $comment )
                     <tr>
-                        <td>{{ $post->id }}</td>
-                        <td>{{ $post->topic_id }}</td>
-                        <td>{{ $post->description }}</td>
+                        <td>{{ $comment->id }}</td>
+                        <td>{{ $comment->post_id }}</td>
+                        <td>{{ $comment->description }}</td>
                         <td>
-                            <a class="btn btn-sm btn-info" href="{{ route('post.show',$post->id) }}">View</a>
-                            <a class="btn btn-sm btn-warning" href="{{ route('post.edit',$post->id) }}">Edit</a>
-                            <form style="display:inline" action="{{route('post.delete',$post->id)}}" method="POST">
+                            <a class="btn btn-sm btn-info" href="{{ route('comment.show',$comment->id) }}">View</a>
+                            <a class="btn btn-sm btn-warning" href="{{ route('comment.edit',$comment->id) }}">Edit</a>
+                            <form style="display:inline" action="{{route('comment.delete',$comment->id)}}" method="comment">
                                 @csrf
                                 @method('delete')
                                 <button onclick="alert('Are You Sure ! to DELETE this file?')" type="submit" class="btn btn-sm btn-danger">Delete</button>
@@ -43,7 +43,11 @@
                        
                     </tr>
                     @endforeach
-             
+                    
+                    
+                 
+                    
+                    
                     
                 </tbody>
             </table>
