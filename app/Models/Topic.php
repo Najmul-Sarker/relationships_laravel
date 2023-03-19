@@ -10,4 +10,8 @@ class Topic extends Model
     use HasFactory;
 
     protected $guarded = ['id'];
+
+    public function forum(){
+        return $this->belongsTo(Forum::class);
+    }
 }

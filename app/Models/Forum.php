@@ -10,4 +10,8 @@ class Forum extends Model
     use HasFactory;
 
     protected $guarded = ['id'];
+
+    public function post(){
+        return $this->hasMany(Post::class);
+       }
 }
