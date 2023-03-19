@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\backend\HomeController;
 use App\Http\Controllers\backend\ForumController;
+use App\Http\Controllers\backend\PostController;
 use App\Http\Controllers\backend\TopicController;
 
 /*
@@ -43,5 +44,16 @@ Route::prefix('admin/topic')->name('topic.')->controller(TopicController::class)
     Route:: get('/show/{topic}','show')->name('show');
     Route:: post('/update/{topic}','update')->name('update');
     Route:: delete('/delete/{topic}','delete')->name('delete');
+
+});
+//post route
+Route::prefix('admin/post')->name('post.')->controller(PostController::class)->group(function(){
+    Route:: get('/','index')->name('index');
+    Route:: get('/create','create')->name('create');
+    Route:: post('/store','store')->name('store');
+    Route:: get('/edit/{post}','edit')->name('edit');
+    Route:: get('/show/{post}','show')->name('show');
+    Route:: post('/update/{post}','update')->name('update');
+    Route:: delete('/delete/{post}','delete')->name('delete');
 
 });

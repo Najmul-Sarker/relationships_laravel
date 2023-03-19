@@ -17,7 +17,7 @@
                     <nav class="sb-sidenav-menu-nested nav">
                         <a class="nav-link" href="{{ route('forum.index') }}">Forum</a>
                         <a class="nav-link" href="{{ route('topic.index') }}">Topic</a>
-                        <a class="nav-link" href="#">Post</a>
+                        <a class="nav-link" href="{{ route('post.index') }}">Post</a>
                         <a class="nav-link" href="#">Comment</a>
                     </nav>
                 </div>

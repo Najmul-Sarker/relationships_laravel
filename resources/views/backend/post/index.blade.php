@@ -1,9 +1,9 @@
 <x-backend.layouts.master>
     <div class="card mb-4">
         <div class="card-header">
-            <a href="{{ route('forum.create') }}" class="btn btn-primary">create</a>
+            <a href="{{ route('post.create') }}" class="btn btn-primary">create</a>
             <x-slot:title>
-                Forum List
+                post List
             </x-slot>
         </div>
         @if (session('success'))
@@ -16,22 +16,22 @@
                 <thead>
                     <tr>
                         <th>Ser</th>
-                        <th>Title</th>
+                        <th>Topic Name</th>
                         <th>Description</th>
                         <th>Action</th>
                     </tr>
                 </thead>
                
                 <tbody>
-                    @foreach ($forums as $forum )
+                    @foreach ($posts as $post )
                     <tr>
-                        <td>{{ $forum->id }}</td>
-                        <td>{{ $forum->title }}</td>
-                        <td>{{ $forum->description }}</td>
+                        <td>{{ $post->id }}</td>
+                        <td>{{ $post->topic_id }}</td>
+                        <td>{{ $post->description }}</td>
                         <td>
-                            <a class="btn btn-sm btn-info" href="{{ route('forum.show',$forum->id) }}">View</a>
-                            <a class="btn btn-sm btn-warning" href="{{ route('forum.edit',$forum->id) }}">Edit</a>
-                            <form style="display:inline" action="{{route('forum.delete',$forum->id)}}" method="POST">
+                            <a class="btn btn-sm btn-info" href="{{ route('post.show',$post->id) }}">View</a>
+                            <a class="btn btn-sm btn-warning" href="{{ route('post.edit',$post->id) }}">Edit</a>
+                            <form style="display:inline" action="{{route('post.delete',$post->id)}}" method="POST">
                                 @csrf
                                 @method('delete')
                                 <button onclick="alert('Are You Sure ! to DELETE this file?')" type="submit" class="btn btn-sm btn-danger">Delete</button>
