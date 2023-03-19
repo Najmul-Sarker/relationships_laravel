@@ -16,7 +16,7 @@
                 <div class="collapse" id="collapseLayouts1" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav">
                         <a class="nav-link" href="{{ route('forum.index') }}">Forum</a>
-                        <a class="nav-link" href="#">Topic</a>
+                        <a class="nav-link" href="{{ route('topic.index') }}">Topic</a>
                         <a class="nav-link" href="#">Post</a>
                         <a class="nav-link" href="#">Comment</a>
                     </nav>
